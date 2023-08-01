@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #544f40;
+}
+
+button {
+  cursor: pointer;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 20px 200px;
+  grid-template-columns: repeat(2, 200px);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  border-radius: 10px;
+  padding: 10px 5px;
+}
+
+.box_images {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+}
+
+.box_sale {
+  margin-top: 20px;
+}
+
+.box__btn {
+  margin-top: 14px;
+  padding: 8px 25px;
+  border-radius: 6px;
+}
+
+.message {
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 10px;
+}
+
+.message_subtitle {
+  font-size: 10px;
+}
+
+.message-btn__clear {
+  cursor: pointer;
+  -webkit-transition: 0.28s;
+  transition: 0.28s;
+  margin-top: 20px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 8px 25px;
+  border-radius: 6px;
+}
+.message-btn__clear:hover {
+  -webkit-transition: 0.28s;
+  transition: 0.28s;
+  background-color: black;
+  color: white;
+}
+
+.listbought {
+  font-size: 10px;
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 10px;
+}
+
+.listbought__subtitle {
+  margin-bottom: 10px;
+}
+
+.listbought__item {
+  list-style-type: none;
+}
+
+.listbought__item:not(:first-child) {
+  margin-top: 6px;
+}
