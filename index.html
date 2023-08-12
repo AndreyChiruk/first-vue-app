@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Shop</title>
+	<title>Магазин коробок</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,9 +25,19 @@
 		<div v-if="boughtItems.length > 0" class="listbought">
 			<h3 class="listbought__subtitle">Список ваших покупок</h3>
 			<ul class="listbought__list">
-				<li class="listbought__item" v-for="bought in boughtItems">{{bought.name + " x" + bought.x}}</li>
+				<li class="listbought__item" v-for="bought in boughtItems">{{bought.name.name + " x" + bought.x}}</li>
 			</ul>
+			<button class="message-btn__clear" v-if="boughtItems.length>0" @click="clear">Купить</button>
 		</div>
+		<div class="buymessage">
+			<button class="message-btn__clear" @click="activeMenu">Добавить товар</button>
+		</div>
+		<div class="menubuy">
+			<input class="namecontent" type="text" placeholder="Название товара">
+			<input class="linkcontent" type="text" placeholder="Ссылка на фото">
+			<input class="costcontent" type="text" placeholder="Цена товара">
+			<input class="btncontent" type="submit" @click="addContent">
+		</div> 
 	</div>
 	<script src="script/script.js"></script>
 </body>

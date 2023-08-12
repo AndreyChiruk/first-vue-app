@@ -21,24 +21,50 @@ var app = new Vue({
       }
       this.quantity += num.sale;
       if(this.boughtItems.length > 0){
-        for(let y of this.boughtItems){
-          if(y.name == num.name){
-            y.x += 1;
+        let number = "";
+        let y = 0;
+        while (y < this.boughtItems.length) {
+          if(this.boughtItems[y].name === num){
+            number += "1";
           }
-          else if(y.name != num.name){
-            let merchandise = new makeItems(num.name);
-            this.boughtItems.push(merchandise);
+          else{
+            number += "0";
           }
+          y += 1;
+        }
+        if(number.indexOf('1') > -0.1){
+            this.boughtItems[number.indexOf('1')].x += 1;
+        }
+        else{
+          this.boughtItems.push(new makeItems(num));
         }
       }
-      else if (this.boughtItems.length === 0){
-        let merchandise = new makeItems(num.name);
-        this.boughtItems.push(merchandise);
+      else{
+        this.boughtItems.push(new makeItems(num))
       }
     },
     clear(){
       this.quantity = 0;
       this.boughtItems = [];
+    },
+    activeMenu(){
+      let btn = document.querySelectorAll('.menubuy');
+      btn[0].classList.toggle('active');
+    },
+    addContent(){
+      let name = document.querySelectorAll('.namecontent')[0].value;
+      let cost = document.querySelectorAll('.costcontent')[0].value;
+      let link = document.querySelectorAll('.linkcontent')[0].value;
+      class addContent{
+        constructor(name, link, cost){
+          this.name = name;
+          this.link = link;
+          this.sale = cost;
+        }
+      };
+      this.content.push(new addContent(name, link, parseInt(cost)));
+      let btn = document.querySelectorAll('.menubuy');
+      btn[0].classList.toggle('active');
     }
   }
 })
